@@ -5,10 +5,16 @@
 @import "navbar";
 @import "card";
 @import "banner";
+@import "cardcategory";
+@import "navbar";
 
 .btn {
-  background-color: rgb(47, 218, 98);
+  background-color: rgb(218, 47, 70);
   border: none;
   border-radius: 4px;
   padding: 12px 24px;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: rgb(124, 25, 39);
 }

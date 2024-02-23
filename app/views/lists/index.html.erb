@@ -4,18 +4,20 @@
     <p>Classic</p>
   </div>
 </div>
-<div class="container">
-  <h1>My Lists</h1>
-  <ul class="list-group">
-    <% @lists.each do |list| %>
-    <li class="list-group-item">
-      <p><%= list.name %></p>
-    </li>
-    <%= link_to "See details", list_path(list), class: "btn btn-primary" %>
-  <% end %>
-  </ul>
-
+<div class="container mb-5 mt-3">
+    <h1>My Lists</h1>
+  <div class="row justify-content-center">
+      <% @lists.each do |list| %>
+        <div class="col-4 mb-3">
+          <%= link_to list_path(list), class:"text-decoration-none" do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1007557230/photo/movie-projector-on-dark-background.jpg?s=612x612&w=0&k=20&c=bPgXKrqKU4nrWgJ_RXgLe9KN4SIitgTIcRobxxBiXTo=)">
+              <p><%= list.name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
   <br>
   <br>
-  <%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+  <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary" %>
 </div>
