@@ -2,13 +2,13 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 40%;
+  width: 100%;
 }
 
 .card-trip > img {
-  height: 400px;
+  height: 300px;
   width: 100%;
-  object-fit: none;
+  object-fit: cover;
 }
 
 .card-trip h2 {
@@ -23,13 +23,15 @@
   margin: 0;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  .fa-star {
+    color: rgb(255, 217, 0);
+  }
 }
 
 .card-trip-infos .card-trip-user {

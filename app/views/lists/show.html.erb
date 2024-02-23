@@ -1,29 +1,27 @@
-<div class="container">
-  <p><strong>movies</strong></p>
-  <ul class="list-group">
+<div class="container mb-5">
+  <h1><strong>Movies</strong></h1>
+  <div class="d-flex justify-content-end mb-3">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  </div>
+  <div class="row justify-content-center">
     <% @list.bookmarks.each do |bookmark| %>
-      <li class="list-group-item">
+      <div class="col-6 mb-3">
         <% movie = Movie.find(bookmark.movie_id) %>
-          <h2><%= movie.title %></p>
-          <%= link_to "delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "remove movie from list?"} %>
-
         <div class="card-trip">
           <img src="<%= movie.poster_url %>" />
           <div class="card-trip-infos">
             <div>
-              <h2><%= movie.title %></h2>
+              <h2><%= movie.title %> • <%= movie.rating %> <i class="fa-solid fa-star"></i></h2>
               <p><%= movie.overview %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
+          </div>
+          <div class="card-trip-infos">
+            <p class="card-trip-pricing"><%= link_to "delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "remove movie from list?"} %></p>
           </div>
         </div>
-
-
-
-      </li>
+      </div>
     <% end %>
-  </ul>
+  </div>
   <br>
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
   <%= link_to "Back to lists", lists_path, class: "btn btn-primary" %>
 </div>
